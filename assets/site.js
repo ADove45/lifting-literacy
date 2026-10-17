@@ -23,13 +23,18 @@
       if (org && who.value.indexOf('(' + org + ')') === -1) { who.value = who.value.trim() + ' (' + org + ')'; }
     });
     route();
-    var joined = (location.search.match(/[?&]joined=(member|partner)/) || [])[1];
-    if (joined) {
-      if (joined === 'partner') { pick('partner'); }
-      msg.textContent = joined === 'partner'
-        ? 'Thank you for applying to partner with #LiftingLiteracy. We will be in touch by email.'
-        : 'Welcome to #LiftingLiteracy! Watch your inbox for a welcome email.';
+    var notes = {
+      'joined=member': 'Welcome to #LiftingLiteracy! Watch your inbox for a welcome email.',
+      'joined=partner': 'Thank you for applying to partner with #LiftingLiteracy. We will be in touch by email.',
+      'confirmed=member': 'You are confirmed. Welcome to #LiftingLiteracy! Your first update is on its way.',
+      'confirmed=partner': 'You are confirmed. Thank you for partnering with #LiftingLiteracy. We will be in touch soon about next steps.'
+    };
+    var hit = location.search.match(/[?&]((?:joined|confirmed)=(?:member|partner))/);
+    if (hit) {
+      if (/partner$/.test(hit[1])) { pick('partner'); }
+      msg.textContent = notes[hit[1]];
       msg.hidden = false;
+      document.getElementById('join').scrollIntoView();
     }
   }
   Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (btn) {
