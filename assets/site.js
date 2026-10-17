@@ -1,5 +1,5 @@
 (function () {
-  var kinds = ['member', 'partner', 'sponsor'];
+  var kinds = ['member', 'partner'];
   var msg = document.getElementById('su-msg');
   function pick(kind) {
     kinds.forEach(function (k) {
@@ -11,7 +11,7 @@
   if (document.getElementById('form-member')) {
     var route = function () {
       var h = (location.hash || '').replace('#', '');
-      if (h === 'join-partner' || h === 'join-sponsor') { pick(h.slice(5)); document.getElementById('join').scrollIntoView(); }
+      if (h === 'join-partner') { pick('partner'); document.getElementById('join').scrollIntoView(); }
       else if (h === 'join') { pick('member'); }
     };
     window.addEventListener('hashchange', route);
