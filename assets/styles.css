@@ -136,3 +136,33 @@ ul.points li::before { content: ""; width: 0.9rem; height: 0.9rem; margin-top: 0
 .facts div { display: grid; gap: 0.1rem; border-top: 1px solid var(--line); padding-top: 0.75rem; }
 .facts dt { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .facts dd { margin: 0; }
+
+/* ===== Welcome (confirmation) pages ===== */
+.welcome-hero { position: relative; overflow: hidden; background: var(--band); color: var(--on-band); padding-block: clamp(3rem, 9vw, 6rem); text-align: center; }
+.welcome-hero .wrap { position: relative; z-index: 1; display: grid; justify-items: center; gap: 1.25rem; }
+.welcome-hero h1 { color: var(--on-band); font-size: clamp(2.5rem, 7vw, 4.75rem); max-width: 16ch; }
+.welcome-hero h1 mark { background: var(--mark); color: var(--on-mark); }
+.welcome-hero .lede { color: var(--on-band); opacity: 0.92; max-width: 40ch; }
+.welcome-hero .label { color: var(--mark); }
+.glow { position: relative; display: grid; place-items: center; width: min(19rem, 72vw); aspect-ratio: 1; }
+.glow::before { content: ""; position: absolute; inset: -18%; border-radius: 50%; background: radial-gradient(circle, rgba(247,179,43,0.55) 0%, rgba(247,179,43,0.18) 42%, rgba(247,179,43,0) 70%); }
+.glow img { position: relative; width: 88%; height: auto; background: #FAF1DF; border-radius: 1.75rem; padding: 7%; box-shadow: 0 0 0 0.5rem rgba(247,179,43,0.35); }
+.drift { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.drift span { position: absolute; bottom: -3rem; font: 800 clamp(1.4rem, 3vw, 2.4rem) var(--display); color: var(--mark); opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .drift span { animation: rise 11s linear infinite; }
+  .glow::before { animation: breathe 4s ease-in-out infinite; }
+  .welcome-hero .stamp { animation: pop 0.7s 0.2s cubic-bezier(.2,1.6,.4,1) both; }
+}
+@media (prefers-reduced-motion: reduce) { .drift span { opacity: 0.25; bottom: auto; } }
+@keyframes rise { 0% { transform: translateY(0) rotate(-8deg); opacity: 0; } 12% { opacity: 0.4; } 80% { opacity: 0.25; } 100% { transform: translateY(-115vh) rotate(10deg); opacity: 0; } }
+@keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes pop { from { transform: scale(0.4) rotate(-12deg); opacity: 0; } to { transform: scale(1) rotate(-4deg); opacity: 1; } }
+.stamp { display: inline-block; font-family: var(--hand); font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1; color: var(--on-mark); background: var(--mark); padding: 0.35rem 1rem 0.45rem; border-radius: 0.4rem; transform: rotate(-4deg); }
+.welcome-hero .btn { background: var(--mark); border-color: var(--mark); color: var(--on-mark); }
+.welcome-hero .btn.ghost { background: transparent; color: var(--on-band); border-color: var(--on-band); }
+.welcome-hero .row { justify-content: center; }
+.next-card { background: var(--surface); border: 1px solid var(--line); border-top: 0.45rem solid var(--mark); border-radius: 0.5rem; padding: 1.5rem; display: grid; gap: 0.6rem; align-content: start; }
+.next-card .num { font: 800 2.2rem/1 var(--display); color: var(--deep); }
+.signoff { font-family: var(--hand); font-size: 2rem; line-height: 1.2; color: var(--note); }
+.share-input { font: 1rem var(--body); padding: 0.8rem 0.9rem; border-radius: 0.4rem; border: 2px solid var(--line); background: var(--surface); color: var(--ink); flex: 1 1 16rem; min-width: 0; }
