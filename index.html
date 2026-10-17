@@ -129,16 +129,17 @@
           <p>You'll get newsletter updates, the Resource Library and discount prices on live events.</p>
           <button class="btn" type="submit">Become a member</button>
         </form>
-        <form id="form-partner" role="tabpanel" aria-labelledby="tab-partner" novalidate hidden>
-          <label for="p-org">Organization name<input id="p-org" type="text" autocomplete="organization"></label>
-          <label for="p-name">Your name<input id="p-name" type="text" autocomplete="name"></label>
-          <label for="p-email">Email address<input id="p-email" type="email" autocomplete="email"></label>
-          <label for="p-site">Organization website<input id="p-site" type="url" placeholder="https://"></label>
-          <label for="p-fund">Link to your fundraiser, if you have one<input id="p-fund" type="url" placeholder="https://"></label>
-          <label for="p-work">Your literacy work, in a sentence or two<textarea id="p-work" rows="3"></textarea></label>
+        <form id="form-partner" role="tabpanel" aria-labelledby="tab-partner" action="https://app.getresponse.com/add_subscriber.html" method="post" accept-charset="utf-8" hidden>
+          <input type="hidden" name="campaign_token" value="79y27">
+          <input type="hidden" name="start_day" value="0">
+          <input type="hidden" name="thankyou_url" value="https://liftingliteracy.amykellywrites.com/?joined=partner#join">
+          <label for="p-name">Your name<input id="p-name" name="name" type="text" autocomplete="name" required></label>
+          <label for="p-org">Organization name<input id="p-org" type="text" autocomplete="organization" required></label>
+          <label for="p-email">Email address<input id="p-email" name="email" type="email" autocomplete="email" required></label>
+          <p>We'll email you about next steps: your partner page, your fundraiser link and the partner kit.</p>
           <button class="btn" type="submit">Apply as a partner</button>
         </form>
-        <p class="msg" id="su-msg" hidden>This preview form is not connected yet, so nothing was saved. The live site will send it to your GetResponse account.</p>
+        <p class="msg" id="su-msg" role="status" hidden></p>
       </div>
     </div>
   </section>

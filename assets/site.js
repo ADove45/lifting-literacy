@@ -18,11 +18,17 @@
     kinds.forEach(function (k) {
       document.getElementById('tab-' + k).addEventListener('click', function () { pick(k); });
     });
-    var previewText = msg.textContent;
-    document.getElementById('form-partner').addEventListener('submit', function (e) { e.preventDefault(); msg.textContent = previewText; msg.hidden = false; });
+    document.getElementById('form-partner').addEventListener('submit', function () {
+      var who = document.getElementById('p-name'), org = document.getElementById('p-org').value.trim();
+      if (org && who.value.indexOf('(' + org + ')') === -1) { who.value = who.value.trim() + ' (' + org + ')'; }
+    });
     route();
-    if (/[?&]joined=member/.test(location.search)) {
-      msg.textContent = 'Welcome to #LiftingLiteracy! Watch your inbox for a welcome email.';
+    var joined = (location.search.match(/[?&]joined=(member|partner)/) || [])[1];
+    if (joined) {
+      if (joined === 'partner') { pick('partner'); }
+      msg.textContent = joined === 'partner'
+        ? 'Thank you for applying to partner with #LiftingLiteracy. We will be in touch by email.'
+        : 'Welcome to #LiftingLiteracy! Watch your inbox for a welcome email.';
       msg.hidden = false;
     }
   }
