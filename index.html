@@ -120,14 +120,13 @@
         <p><strong>Membership is free.</strong> Donations go straight to the partner you choose.</p>
       </div>
       <div class="stack">
-        <form id="form-member" role="tabpanel" aria-labelledby="tab-member" novalidate>
-          <label for="m-name">First name<input id="m-name" type="text" autocomplete="given-name"></label>
-          <label for="m-email">Email address<input id="m-email" type="email" autocomplete="email"></label>
-          <fieldset><legend>I am interested in</legend>
-            <label class="check" for="m-news"><input id="m-news" type="checkbox" checked> Newsletter updates</label>
-            <label class="check" for="m-lib"><input id="m-lib" type="checkbox" checked> The Resource Library</label>
-            <label class="check" for="m-events"><input id="m-events" type="checkbox" checked> Live events</label>
-          </fieldset>
+        <form id="form-member" role="tabpanel" aria-labelledby="tab-member" action="https://app.getresponse.com/add_subscriber.html" method="post" accept-charset="utf-8">
+          <input type="hidden" name="campaign_token" value="79yDy">
+          <input type="hidden" name="start_day" value="0">
+          <input type="hidden" name="thankyou_url" value="https://liftingliteracy.amykellywrites.com/?joined=member#join">
+          <label for="m-name">First name<input id="m-name" name="name" type="text" autocomplete="given-name" required></label>
+          <label for="m-email">Email address<input id="m-email" name="email" type="email" autocomplete="email" required></label>
+          <p>You'll get newsletter updates, the Resource Library and discount prices on live events.</p>
           <button class="btn" type="submit">Become a member</button>
         </form>
         <form id="form-partner" role="tabpanel" aria-labelledby="tab-partner" novalidate hidden>
