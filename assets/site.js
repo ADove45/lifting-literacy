@@ -18,7 +18,8 @@
     kinds.forEach(function (k) {
       document.getElementById('tab-' + k).addEventListener('click', function () { pick(k); });
     });
-    document.getElementById('form-partner').addEventListener('submit', function (e) { e.preventDefault(); msg.hidden = false; });
+    var previewText = msg.textContent;
+    document.getElementById('form-partner').addEventListener('submit', function (e) { e.preventDefault(); msg.textContent = previewText; msg.hidden = false; });
     route();
     if (/[?&]joined=member/.test(location.search)) {
       msg.textContent = 'Welcome to #LiftingLiteracy! Watch your inbox for a welcome email.';
