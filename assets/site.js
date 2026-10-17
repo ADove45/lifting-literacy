@@ -37,6 +37,30 @@
       document.getElementById('join').scrollIntoView();
     }
   }
+  var survey = document.getElementById('survey');
+  if (survey) {
+    var smsg = document.getElementById('survey-msg');
+    if (/[?&]sent=1/.test(location.search)) {
+      survey.querySelectorAll('fieldset, button').forEach(function (el) { el.hidden = true; });
+      smsg.textContent = 'Thank you! Your answers were sent. They will help shape what #LiftingLiteracy offers.';
+      smsg.hidden = false;
+      smsg.scrollIntoView();
+    }
+    survey.addEventListener('submit', function (e) {
+      if (survey.getAttribute('action') === 'FORM_ENDPOINT') { e.preventDefault(); smsg.textContent = 'This survey is not connected yet, so nothing was sent.'; smsg.hidden = false; return; }
+      // join each checkbox group into one line so the email reads cleanly
+      var groups = {};
+      survey.querySelectorAll('input[type=checkbox]').forEach(function (c) {
+        groups[c.name] = groups[c.name] || [];
+        if (c.checked) { groups[c.name].push(c.value); }
+        c.disabled = true;
+      });
+      Object.keys(groups).forEach(function (name) {
+        var h = document.createElement('input'); h.type = 'hidden'; h.name = name;
+        h.value = groups[name].join(', ') || '(skipped)'; survey.appendChild(h);
+      });
+    });
+  }
   Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (btn) {
     var label = btn.textContent;
     btn.addEventListener('click', function () {

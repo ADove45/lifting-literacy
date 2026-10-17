@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tell Us What You Need | #LiftingLiteracy</title>
+<meta name="description" content="The #LiftingLiteracy campaign (2026–2027) connects literacy organizations with the communities they serve and widens access to reading for all ages.">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600&display=swap">
+<link rel="stylesheet" href="assets/styles.css?v=20261017g">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="wordmark" href="index.html#top"><img class="mark-img" src="assets/logo-mark.png" alt="" width="240" height="208"><span>#LiftingLiteracy</span></a>
+    <nav aria-label="Main">
+      <a href="index.html#members">Members</a>
+      <a href="index.html#partners">Partners</a>
+      <a href="index.html#resources">Resources</a>
+      <a class="btn" href="index.html#join" style="color:var(--on-deep);padding:0.5rem 1rem">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="survey-page">
+  <section class="hero">
+    <div class="wrap split" style="align-items:start">
+      <div class="stack">
+        <p class="label">Tell us what you need</p>
+        <h1 style="font-size:clamp(2.1rem,5vw,3.4rem)">Your reading goals, <mark>in your words.</mark></h1>
+        <p class="lede">We want to hear from the readers this campaign is for. Tell us what you want to do and what would help. It takes about 3 minutes.</p>
+      </div>
+      <div class="card">
+        <p class="label">Good to know</p>
+        <ul class="points">
+          <li><p><strong>Your name is not needed.</strong> Email is optional.</p></li>
+          <li><p><strong>Someone can help you.</strong> A friend, family member or tutor can read the questions aloud and fill this in with you.</p></li>
+          <li><p><strong>There are no wrong answers.</strong> Skip any question you like.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <form id="survey" class="survey" action="FORM_ENDPOINT" method="POST">
+        <input type="hidden" name="_subject" value="New #LiftingLiteracy survey answer">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://liftingliteracy.amykellywrites.com/survey.html?sent=1">
+        <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <fieldset class="survey-q">
+          <legend><span class="qnum">1</span> Who are you answering for?</legend>
+          <p class="hint">Choose all that fit.</p>
+          <div class="opts"><label class="opt"><input type="checkbox" name="Answering for" value="Myself"> <span>Myself</span></label><label class="opt"><input type="checkbox" name="Answering for" value="My child"> <span>My child</span></label><label class="opt"><input type="checkbox" name="Answering for" value="A teen in my life"> <span>A teen in my life</span></label><label class="opt"><input type="checkbox" name="Answering for" value="Someone I tutor or teach"> <span>Someone I tutor or teach</span></label></div>
+        </fieldset>
+        <fieldset class="survey-q">
+          <legend><span class="qnum">2</span> How old is the reader?</legend>
+          <p class="hint">Choose all that fit.</p>
+          <div class="opts"><label class="opt"><input type="checkbox" name="Reader age" value="Child"> <span>Child</span></label><label class="opt"><input type="checkbox" name="Reader age" value="Teen"> <span>Teen</span></label><label class="opt"><input type="checkbox" name="Reader age" value="Adult"> <span>Adult</span></label></div>
+        </fieldset>
+        <fieldset class="survey-q">
+          <legend><span class="qnum">3</span> What is your reading goal?</legend>
+          <p class="hint">Choose all that fit.</p>
+          <div class="opts"><label class="opt"><input type="checkbox" name="Reading goal" value="Enjoy books"> <span>Enjoy books</span></label><label class="opt"><input type="checkbox" name="Reading goal" value="Help with school"> <span>Help with school</span></label><label class="opt"><input type="checkbox" name="Reading goal" value="Read to my children"> <span>Read to my children</span></label><label class="opt"><input type="checkbox" name="Reading goal" value="Pass the GED"> <span>Pass the GED</span></label><label class="opt"><input type="checkbox" name="Reading goal" value="Do better at work"> <span>Do better at work</span></label><label class="opt"><input type="checkbox" name="Reading goal" value="Understand forms, mail and labels"> <span>Understand forms, mail and labels</span></label><label class="opt"><input type="checkbox" name="Reading goal" value="Something else"> <span>Something else</span></label></div>
+        </fieldset>
+        <fieldset class="survey-q">
+          <legend><span class="qnum">4</span> What makes reading hard right now?</legend>
+          <p class="hint">Choose all that fit.</p>
+          <div class="opts"><label class="opt"><input type="checkbox" name="What makes it hard" value="Not enough time"> <span>Not enough time</span></label><label class="opt"><input type="checkbox" name="What makes it hard" value="I can’t find books I like"> <span>I can’t find books I like</span></label><label class="opt"><input type="checkbox" name="What makes it hard" value="Hard words"> <span>Hard words</span></label><label class="opt"><input type="checkbox" name="What makes it hard" value="No one to help me"> <span>No one to help me</span></label><label class="opt"><input type="checkbox" name="What makes it hard" value="Cost"> <span>Cost</span></label><label class="opt"><input type="checkbox" name="What makes it hard" value="Getting to the library"> <span>Getting to the library</span></label><label class="opt"><input type="checkbox" name="What makes it hard" value="Small print or eyesight"> <span>Small print or eyesight</span></label><label class="opt"><input type="checkbox" name="What makes it hard" value="English is new to me"> <span>English is new to me</span></label></div>
+        </fieldset>
+        <fieldset class="survey-q">
+          <legend><span class="qnum">5</span> What would help you most?</legend>
+          <p class="hint">Choose all that fit.</p>
+          <div class="opts"><label class="opt"><input type="checkbox" name="What would help" value="A tutor"> <span>A tutor</span></label><label class="opt"><input type="checkbox" name="What would help" value="Free books"> <span>Free books</span></label><label class="opt"><input type="checkbox" name="What would help" value="Audiobooks"> <span>Audiobooks</span></label><label class="opt"><input type="checkbox" name="What would help" value="A reading group"> <span>A reading group</span></label><label class="opt"><input type="checkbox" name="What would help" value="Help using library apps"> <span>Help using library apps</span></label><label class="opt"><input type="checkbox" name="What would help" value="Classes near me"> <span>Classes near me</span></label><label class="opt"><input type="checkbox" name="What would help" value="Materials in Spanish"> <span>Materials in Spanish</span></label><label class="opt"><input type="checkbox" name="What would help" value="Large print"> <span>Large print</span></label></div>
+        </fieldset>
+        <fieldset class="survey-q">
+          <legend><span class="qnum">6</span> How do you like to learn?</legend>
+          <p class="hint">Choose all that fit.</p>
+          <div class="opts"><label class="opt"><input type="checkbox" name="How I like to learn" value="In person"> <span>In person</span></label><label class="opt"><input type="checkbox" name="How I like to learn" value="Online"> <span>Online</span></label><label class="opt"><input type="checkbox" name="How I like to learn" value="On my phone"> <span>On my phone</span></label><label class="opt"><input type="checkbox" name="How I like to learn" value="At home with family"> <span>At home with family</span></label></div>
+        </fieldset>
+        <fieldset class="survey-q">
+          <legend><span class="qnum">7</span> Is there anything else you want to tell us?</legend>
+          <p class="hint">Optional. Write as much or as little as you like.</p>
+          <textarea name="Anything else" rows="4"></textarea>
+        </fieldset>
+        <fieldset class="survey-q">
+          <legend><span class="qnum">8</span> Want to hear what we do with your answers?</legend>
+          <p class="hint">Optional. Leave your email and we will share what we learn.</p>
+          <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
+        </fieldset>
+        <button class="btn" type="submit">Send my answers</button>
+        <p class="msg" id="survey-msg" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><strong>#LiftingLiteracy</strong> Campaign · 2026–2027 · Started by <a href="https://amykellywrites.com">Amy Kelly</a></span>
+    <span><a href="index.html#members">Members</a> · <a href="index.html#partners">Partners</a> · <a href="free-resources.html">Free resources</a> · <a href="resource-library.html">Resource Library</a> · <a href="survey.html">Tell us what you need</a></span>
+  </div>
+</footer>
+<script src="assets/site.js?v=20261017g"></script>
+</body>
+</html>
