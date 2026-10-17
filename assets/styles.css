@@ -169,3 +169,8 @@ ul.points li::before { content: ""; width: 0.9rem; height: 0.9rem; margin-top: 0
 .soon-tag { justify-self: start; display: inline-block; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--mark); color: var(--on-mark); padding: 0.15rem 0.6rem; border-radius: 999px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .item a { font-weight: 700; }
+section.hero { padding-block: clamp(1.75rem, 4vw, 3rem) clamp(2.5rem, 6vw, 4rem); }
+.hero-side { display: grid; gap: 1.5rem; justify-items: center; }
+.hero-side .logo-full { max-width: 15rem; }
+.hero-side .passage { width: 100%; }
+@media (max-width: 52rem) { .hero-side .logo-full { max-width: 11rem; } }
