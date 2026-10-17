@@ -166,3 +166,4 @@ ul.points li::before { content: ""; width: 0.9rem; height: 0.9rem; margin-top: 0
 .next-card .num { font: 800 2.2rem/1 var(--display); color: var(--deep); }
 .signoff { font-family: var(--hand); font-size: 2rem; line-height: 1.2; color: var(--note); }
 .share-input { font: 1rem var(--body); padding: 0.8rem 0.9rem; border-radius: 0.4rem; border: 2px solid var(--line); background: var(--surface); color: var(--ink); flex: 1 1 16rem; min-width: 0; }
+.soon-tag { justify-self: start; display: inline-block; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--mark); color: var(--on-mark); padding: 0.15rem 0.6rem; border-radius: 999px; }
