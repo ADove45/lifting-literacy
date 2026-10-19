@@ -193,3 +193,6 @@ section.hero { padding-block: clamp(1.75rem, 4vw, 3rem) clamp(2.5rem, 6vw, 4rem)
 .survey .about legend em { font-style: normal; color: var(--muted); font-size: 1rem; }
 @media (max-width: 30rem) { .survey .pair { grid-template-columns: minmax(0, 1fr); } }
 .partner-logo { width: 100%; max-width: 15rem; height: auto; background: #FFFFFF; border-radius: 0.5rem; padding: 0.6rem; border: 1px solid var(--line); }
+ol.steps.how { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+ol.steps.how li { background: var(--surface); border: 1px solid var(--line); border-radius: 0.5rem; padding: 1.25rem; }
+@media (max-width: 52rem) { ol.steps.how { grid-template-columns: minmax(0, 1fr); } }
